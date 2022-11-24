@@ -151,7 +151,7 @@ functions via `clasp run`, run the command below to add a rule
 
 * you can also set rules in bulk, but this isn't exactly recommended
   ```sh
-  clasp run setRules -p '[{"ip":[["194\\.106\\.216\\.130"]],"from":[["wish\\.com"],["[a-z0-9]yelp\\.com/","i"],["atari\\.com"],["ataribox"]],"subject":[["Зачисление"]],"content":[["newsletterSUBSCRIBEMORE"],"to":[["^\\-\\-><\\-\\-$"]]}]'
+  clasp run setRules -p '[{"ip":[["194\\.106\\.216\\.130"]],"from":[["wish\\.com"],["[a-z0-9]yelp\\.com/","i"],["atari\\.com"],["ataribox"]],"subject":[["Зачисление"]],"content":[["newsletterSUBSCRIBEMORE"]],"to":[["^\\-\\-><\\-\\-$"]]}]'
   ```
 
 Generally rules should never be removed and new ones only added on
