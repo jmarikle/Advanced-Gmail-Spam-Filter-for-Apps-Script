@@ -17,7 +17,10 @@ const runSpamFilter = async () => {
             let { id, thread } = details;
 
             for (const [key, rules] of Object.entries(ruleSets)) {
-                let regexps = rules.map(([pattern, flags]) => new RegExp(pattern, flags));
+                let regexps = rules.map(([pattern, flags]) => {
+                    flags = flags ? flags : undefined;
+                    return new RegExp(pattern, flags);
+                });
 
                 let matches = getMatchingRuleIndex(regexps, details[key])
 
@@ -68,9 +71,13 @@ const addRule = (type, regex, flags) => {
 }
 
 const setRules = (rules) => {
-    userProperties.setProperty('rules', JSON.stringify(rules));
+    PropertiesService
+        .getUserProperties()
+        .setProperty('rules', JSON.stringify(rules));
 }
 
 const resetRules = () => {
-    userProperties.setProperty('rules', JSON.stringify({}));
+    PropertiesService
+        .getUserProperties()
+        .setProperty('rules', JSON.stringify({}));
 }
