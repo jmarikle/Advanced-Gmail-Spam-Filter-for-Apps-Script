@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "deploy": "clasp push"
+    "deploy": "npx clasp push"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.56",
     "html-entities": "^2.3.3",
     "lodash": "^4.17.21",

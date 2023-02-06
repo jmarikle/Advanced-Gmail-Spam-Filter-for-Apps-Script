@@ -83,8 +83,11 @@ const applyRuleLabel = function(thread, type, index)
 {
     let labelName = 'GmailApp/rules/' + type + '-' + index;
 
-    let label = GmailApp.getUserLabelByName(labelName) ?
-        GmailApp.getUserLabelByName(labelName) : GmailApp.createLabel(labelName);
+    let label = GmailApp.getUserLabelByName(labelName)
+
+    if (!label) {
+        GmailApp.createLabel(labelName);
+    }
 
     thread.addLabel(label)
 }

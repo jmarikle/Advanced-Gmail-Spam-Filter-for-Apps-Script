@@ -8,6 +8,7 @@
     "access": "ANYONE"
   },
   "oauthScopes": [
+    "https://mail.google.com/",
     "https://www.googleapis.com/auth/gmail.modify"
   ]
 }
