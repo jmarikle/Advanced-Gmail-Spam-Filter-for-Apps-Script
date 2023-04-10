@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "build-debug": "PROD_ENV=false webpack --config webpack.config.js",
     "deploy": "npx clasp push"
   },
   "author": "",

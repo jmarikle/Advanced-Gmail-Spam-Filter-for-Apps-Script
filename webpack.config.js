@@ -1,5 +1,7 @@
 const path = require('path');
 
+const PROD = JSON.parse(process.env.PROD_ENV || true);
+
 module.exports = {
     mode: 'production',
     entry: {
@@ -12,5 +14,8 @@ module.exports = {
             name: 'FilterSpam',
             type: 'var'
         }
+    },
+    optimization: {
+      minimize: PROD,
     }
 }
